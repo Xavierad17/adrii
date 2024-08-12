@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interest Calculator - Adrian's Gadgets</title>
+</head>
+<body>
+    <h2>Simple and Compound Interest Calculator</h2>
+    <form id="interest-form">
+        <label for="calculation-type">Calculation Type:</label>
+        <select id="calculation-type" onchange="toggleFields()">
+            <option value="simple">Simple Interest</option>
+            <option value="compound">Compound Interest</option>
+            <option value="both">Both</option>
+        </select>
+
+        <label for="principal">Principal Amount:</label>
+        <input type="number" id="principal" required>
+
+        <label for="rate">Annual Interest Rate (%):</label>
+        <input type="number" id="rate" step="0.01" required>
+
+        <label for="time">Time (years):</label>
+        <input type="number" id="time" required>
+
+        <div id="compound-fields" style="display: none;">
+            <label for="compounds">Compounds per Year (for CI):</label>
+            <input type="number" id="compounds" value="1">
+        </div>
+
+        <button type="button" onclick="calculateInterest()">Calculate</button>
+    </form>
+
+    <h3>Results</h3>
+    <p id="si-result" style="display: none;"></p>
+    <p id="ci-result" style="display: none;"></p>
+
+    <script src="loan.js"></script>
+</body>
+</html>
